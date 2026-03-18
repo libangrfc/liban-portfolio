@@ -33,11 +33,16 @@ ul {
     border-radius: 5px;
 }
 
-section {
+section, .section {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+}
+a.read-more-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
 }
 </style>
 </head>
@@ -53,34 +58,47 @@ section {
             I am a Software Development student with experience in full-stack web development,
             database design, and Agile Scrum methodologies. I enjoy building scalable web
             applications and working collaboratively in team-based environments.
+        </p>
+    </div>
 
-            <h2>Projects</h2>
+    <div class="section">
+        <h2>Projects</h2>
 
-<h3>Social Media Web Application (Scrum Project)</h3>
-<p>
-This project was developed as a team using the Scrum development process.
-The goal was to build a social media style web application where users can
-create posts, view a feed, and manage their content.
-</p>
+        <h3>Social Media Web Application (Scrum Project)</h3>
+        <p>
+            This project was developed as a team using the Scrum development process.
+            <span id="moreSocial" style="display:none;">
+                The goal of the project was to build a social media style web application where users can create posts, view a feed of posts, and interact with content on the website. 
+                The application was built using PHP, MySQL, HTML, CSS, and JavaScript.
+                The system allows users to create posts, view posts in a feed, bookmark posts, and manage their own content. PHP was used for backend processing while MySQL was used as the relational database to store user accounts and posts. HTML and CSS were used to design the user interface, and JavaScript was used for interactive features.
+                <br><br>
+                This project was beneficial because it helped me gain experience working in a team environment using the Scrum framework. Our team worked in sprints where we completed specific goals each week. I learned how to collaborate with other developers, integrate different parts of a project, and troubleshoot issues when combining multiple files and features.
+                <br><br>
+                Security was also considered during development. User input validation was implemented to ensure that only correct data is processed by the system. The application also restricts users so they can only edit or delete posts that belong to their account. This type of access control helps prevent unauthorized actions within the application.
+            </span>
+            <a class="read-more-link" onclick="toggleText('moreSocial', this)">Read More</a>
+        </p>
 
-<p>
-Technologies used: PHP, MySQL, HTML, CSS, JavaScript.
-The project involved backend programming, database management,
-and collaborative development using Scrum sprints.
-</p>
+        <h3>Car Auction Profit Tracker</h3>
+        <p>
+            The Car Auction Profit Tracker is a web application designed to help track vehicles purchased from car auctions.
+            <span id="moreAuction" style="display:none;">
+                The system allows users to enter information such as purchase price, repair costs, auction fees, and resale price. The application then calculates the total investment and estimated profit for each vehicle.
+                <br><br>
+                This project was built using PHP, MySQL, HTML, and CSS. PHP is used to process the calculations and interact with the database while MySQL stores the vehicle information. The interface allows users to easily input and manage vehicle data.
+                <br><br>
+                This project was beneficial because it helped me improve my backend programming and database management skills. I learned how to connect a PHP application to a MySQL database, process user input from forms, and store and retrieve information from the database.
+                <br><br>
+                Security practices were also considered in this project. Input validation was used to ensure that correct numeric values are entered when calculating costs and profits. This helps prevent incorrect data from being stored and reduces the risk of application errors. Error handling was also used to make sure the application runs smoothly even if incorrect input is entered.
+            </span>
+            <a class="read-more-link" onclick="toggleText('moreAuction', this)">Read More</a>
+        </p>
 
-<h3>Car Auction Profit Tracker</h3>
-<p>
-The Car Auction Profit Tracker is a web application designed to help track
-vehicles purchased from car auctions and calculate potential profit.
-Users can enter purchase price, repair costs, and resale value to calculate
-total investment and estimated profit.
-</p>
-
-<p>
-Technologies used: PHP, MySQL, HTML, CSS, and XAMPP.
-This project demonstrates backend programming and database processing.
-</p>
+        <p>
+            GitHub Repository: 
+            <a href="https://github.com/libangrfc/liban-portfolio" target="_blank">
+                View Projects
+            </a>
         </p>
     </div>
 
@@ -111,25 +129,23 @@ This project demonstrates backend programming and database processing.
     </div>
 
     <div class="section">
-        <h2>Projects</h2>
-        <p><strong>Social Media Web Application</strong></p>
-        <p>
-            Built using Node.js, Express, and MySQL. Features include dynamic post creation,
-            REST API integration, and relational database design.
-        </p>
-        <p>
-            GitHub Repository: 
-            <a href="https://github.com/libangrfc/liban-portfolio" target="_blank">
-                View Project
-            </a>
-        </p>
-    </div>
-
-    <div class="section">
         <h2>Contact</h2>
         <p>Email: libangrfc@gmail.com</p>
         <p>GitHub: <a href="https://github.com/libangrfcE" target="_blank">github.com/libangrfc</a></p>
     </div>
+
+<script>
+function toggleText(id, link) {
+    var text = document.getElementById(id);
+    if (text.style.display === "none") {
+        text.style.display = "inline";
+        link.innerText = "Read Less";
+    } else {
+        text.style.display = "none";
+        link.innerText = "Read More";
+    }
+}
+</script>
 
 </body>
 </html>
